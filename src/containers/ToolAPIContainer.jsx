@@ -22,18 +22,18 @@ export default class ToolAPIContainer extends Component{
     handleSubmit = async (e) => {
         e.preventDefault();
     
-        const { verbValue, url, } = this.state;
+        const { verbValue, url,jsonValue } = this.state;
         let response;
             console.log('VERB VALUE', verbValue);
             console.log('URL', url)
         // this.setState({ loading: true });
     
         try {
-          response = await fetchRequest(verbValue, url);
+          response = await fetchRequest(verbValue, url, jsonValue);
             console.log('response', response)
         } catch (error) {
           response = `This ${error.message} happened!!`;
-            console.log('response22', response)
+            console.log('response2', response)
         }
 
         this.setState({
