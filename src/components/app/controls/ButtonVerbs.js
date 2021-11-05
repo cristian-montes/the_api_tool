@@ -1,18 +1,18 @@
 import React  from "react";
 
-export default function ButtonVerb({verbName}){
+export default function ButtonVerb({name, handleInputChange}){
     return(
         <div>
             <input
-                id={verbName}
+                id={name}
                 type="radio"
-                name="methodValue"
-                value='ALGO'
+                name="verbValue"
+                value={name}
                 // checked={methodSelected === name}
-                // onChange={onChange}
+                onChange={ handleInputChange }
             />
-            <label htmlFor='verbs'>
-            {verbName}
+            <label htmlFor={name}>
+            {name}
             </label>
         </div>
     )

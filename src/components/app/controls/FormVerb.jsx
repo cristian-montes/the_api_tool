@@ -1,31 +1,37 @@
 import React from 'react';
 import ButtonVerb from './ButtonVerbs';
 
-function FormVerb({verbs}){
+function FormVerb({verbs, url, handleInputChange, handleSubmit}){
    
     return(
-        <form>
-            <label>Fetch API</label>
+        <section aria-label="request-form" >
+            <form onSubmit={handleSubmit}>
+                <label htmlFor={verbs}></label>
 
-            <input
-                type="url"
-                placeholder="URL"
-                value=''
-                name="urlValue"
-            />
-            <div>
-                { verbs.map((verb)=>(
-                    <ButtonVerb
-                        verbName={verb}
-                        key={verb}
-                    />
-                    ))
+                <input
+                    id={verbs}
+                    type="url"
+                    placeholder="URL"
+                    value={url}
+                    name="url"
+                    onInput= {handleInputChange}
+                />
 
-                }
-            </div>
-            <button>FETCH IT</button>
-            
-        </form>
+                <div>
+                    { verbs.map((verb)=>(
+                        <ButtonVerb
+                            name={verb}
+                            key={verb}
+                            handleInputChange = {handleInputChange}
+                        />
+                        ))
+
+                    }
+                </div>
+                <button>FETCH IT</button>
+                
+            </form>
+        </section>
     )
 }
 
