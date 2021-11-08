@@ -1,6 +1,6 @@
 import React  from "react";
 
-export default function ButtonVerb({name, handleInputChange}){
+export default function ButtonVerb({name, handleInputChange, verbValue}){
     return(
         <div>
             <input
@@ -8,7 +8,7 @@ export default function ButtonVerb({name, handleInputChange}){
                 type="radio"
                 name="verbValue"
                 value={name}
-                // checked={methodSelected === name}
+                checked={verbValue === name}
                 onChange={ handleInputChange }
             />
             <label htmlFor={name}>

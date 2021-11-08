@@ -1,7 +1,8 @@
 import React from 'react';
+import BodyText from './BodyText';
 import ButtonVerb from './ButtonVerbs';
 
-function FormVerb({verbs, url, handleInputChange, handleSubmit}){
+function FormVerb({verbs, url, handleInputChange, handleSubmit, verbValue, jsonValue}){
    
     return(
         <section aria-label="request-form" >
@@ -22,11 +23,21 @@ function FormVerb({verbs, url, handleInputChange, handleSubmit}){
                         <ButtonVerb
                             name={verb}
                             key={verb}
+                            verbValue={verbValue}
                             handleInputChange = {handleInputChange}
                         />
                         ))
 
                     }
+                </div>
+
+
+                <div>
+                    <BodyText
+                        jsonValue={jsonValue}
+                        handleInputChange = {handleInputChange}
+                    />
+
                 </div>
                 <button>FETCH IT</button>
                 

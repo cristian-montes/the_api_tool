@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormVerb from "../components/app/controls/FormVerb";
+import ResultsDisplay from "../components/app/controls/ResultDisplay";
 import { fetchRequest } from "../services/fetchRequest";
 
 
@@ -49,15 +50,23 @@ export default class ToolAPIContainer extends Component{
 
     render(){
         const verbs =  ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
-        const {url, verbValue, response } = this.state
+        const {url, verbValue, response, jsonValue } = this.state
 
         return(
-            <FormVerb 
-                verbs={verbs} 
-                url={url}
-                handleInputChange={this.handleInputChange}
-                handleSubmit={this.handleSubmit}
-                />
+            <div>
+                <FormVerb 
+                    verbs={verbs} 
+                    url={url}
+                    verbValue={verbValue}
+                    handleInputChange={this.handleInputChange}
+                    handleSubmit={this.handleSubmit}
+                    jsonValue={jsonValue}
+                    />
+
+                    <ResultsDisplay response={response}/>
+            </div>
+
+
         );
 
 
