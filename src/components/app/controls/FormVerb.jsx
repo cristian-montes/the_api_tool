@@ -1,6 +1,7 @@
 import React from 'react';
 import BodyText from './BodyText';
 import ButtonVerb from './ButtonVerbs';
+import PropTypes from 'prop-types';
 
 function FormVerb({verbs, url, handleInputChange, handleSubmit, verbValue, jsonValue}){
    
@@ -45,5 +46,14 @@ function FormVerb({verbs, url, handleInputChange, handleSubmit, verbValue, jsonV
         </section>
     )
 }
+
+FormVerb.propTypes = {
+    verbs:PropTypes.string,
+    handleInputChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    url: PropTypes.string.isRequired,
+    verbValue: PropTypes.string,
+    jsonValue: PropTypes.string.isRequired,
+  };
 
 export default FormVerb;

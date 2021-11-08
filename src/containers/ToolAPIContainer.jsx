@@ -25,16 +25,13 @@ export default class ToolAPIContainer extends Component{
     
         const { verbValue, url,jsonValue } = this.state;
         let response;
-            console.log('VERB VALUE', verbValue);
-            console.log('URL', url)
-        // this.setState({ loading: true });
     
         try {
           response = await fetchRequest(verbValue, url, jsonValue);
-            console.log('response', response)
+        
         } catch (error) {
           response = `This ${error.message} happened!!`;
-            console.log('response2', response)
+            
         }
 
         this.setState({
@@ -43,10 +40,6 @@ export default class ToolAPIContainer extends Component{
         })
     
       };
-
-
-
-
 
     render(){
         const verbs =  ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
