@@ -10,9 +10,9 @@ export default class ToolAPIContainer extends Component{
         url:'',
         verbValue:'',
         response:[],
-        jsonValue:null,
+        jsonValue:'',
     }
-
+   
     handleInputChange = (event) => {
         const { name, value } = event.target;
         this.setState({
@@ -46,6 +46,7 @@ export default class ToolAPIContainer extends Component{
         const {url, verbValue, response, jsonValue } = this.state
 
         return(
+          
             <div>
                 <FormVerb 
                     verbs={verbs} 
@@ -58,6 +59,7 @@ export default class ToolAPIContainer extends Component{
 
                     <ResultsDisplay response={response}/>
             </div>
+           
 
 
         );
