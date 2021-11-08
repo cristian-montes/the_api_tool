@@ -6,7 +6,7 @@ import { fetchRequest } from "../services/fetchRequest";
 
 export default class ToolAPIContainer extends Component{
     state={
-        loading:true,
+        // loading:true,
         url:'',
         verbValue:'',
         response:[],
